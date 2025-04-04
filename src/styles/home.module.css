@@ -1,0 +1,85 @@
+:root {
+  --primary-color: #8B5E3B; /* Un marrón cálido, inspirado en la tierra */
+  --secondary-color: #D9B382; /* Un tono arena suave */
+  --background-color: #FAF3E0; /* Beige claro para armonía */
+  --text-color: #3E2723; /* Marrón oscuro para contraste */
+  --accent-color: #A47E58; /* Un tono intermedio para detalles */
+}
+
+body {
+  font-family: "Merriweather", serif; /* Fuente elegante y legible */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 3rem;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: var(--accent-color);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ctabuttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+  .ctabuttons {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

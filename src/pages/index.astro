@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import styles from "../styles/home.module.css";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <section class={styles.section}>
+    <h1 class={styles.h1}>Bienvenidos a TILA Sembrar Salud</h1>
+    <p>
+      Descubre el Ayurveda y transforma tu bienestar con nuestras formaciones y recursos.
+    </p>
+
+    <!-- Video archivado en una caja con un diseño más profesional -->
+    <div class={styles.videoContainer}>
+      <video width="80%" controls>
+        <source src="/videos/presentacion.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+    <div class={styles.ctabuttons}>
+      <a href="TILA/formaciones" class={styles.button}>Explorar Formaciones</a>
+      <a href="TILA/workshops" class={styles.button}>Ver Workshops</a>
+      <a href="TILA/blog" class={styles.button}>Leer Blog</a>
+      <a href="TILA/tila" class={styles.button}>Sobre Nosotros</a>
+    </div>
+  </section>
+
+  <section class={styles.section}>
+    <h2>¿Qué ofrecemos?</h2>
+    <ul>
+      <li>📌 Formaciones en Ayurveda (Masaje Abhyanga, Marma Chikitsa, etc.)</li>
+      <li>📌 Workshops especializados y cursos on demand</li>
+      <li>📌 Blog con recursos y artículos sobre terapias ayurvédicas</li>
+    </ul>
+  </section>
 </Layout>

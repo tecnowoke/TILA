@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import styles from "../styles/workshops.module.css";
+
+const workshops = [
+  {
+    titulo: "Taller de Fermento",
+    subtitulo: "Fermentación y probióticos caseros",
+    descripcion: "Aprende a fermentar alimentos de manera saludable.",
+    enlace: "/workshops/taller-fermento",
+  },
+  {
+    titulo: "Taller de Caldo de Hueso",
+    subtitulo: "Nutrición profunda y sanadora",
+    descripcion: "Descubre los beneficios y la preparación del caldo de hueso.",
+    enlace: "/workshops/taller-caldo-hueso",
+  }
+];
+---
+
+<Layout>
+  <section class={styles.container}>
+    <h1>Workshops, Seminarios y Masterclass</h1>
+    <p>Descubre nuestros talleres breves y especializados:</p>
+    
+    <ul class={styles.list}>
+      {workshops.map((taller) => (
+        <li class={styles.card}>
+          <h2>{taller.titulo}</h2>
+          <h3>{taller.subtitulo}</h3>
+          <p class={styles.description}>{taller.descripcion}</p>
+          <a href={taller.enlace} class={styles.button}>Ver más</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>
