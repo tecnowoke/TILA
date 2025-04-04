@@ -1,6 +1,7 @@
 ---
 import styles from "../styles/home.module.css";
 import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>
@@ -10,19 +11,18 @@ import Layout from "../layouts/Layout.astro";
       Descubre el Ayurveda y transforma tu bienestar con nuestras formaciones y recursos.
     </p>
 
-    <!-- Video archivado en una caja con un diseño más profesional -->
     <div class={styles.videoContainer}>
       <video width="80%" controls>
-        <source src="/videos/presentacion.mp4" type="video/mp4">
+        <source src={`${base}videos/presentacion.mp4`} type="video/mp4">
         Tu navegador no soporta el video.
       </video>
     </div>
 
     <div class={styles.ctabuttons}>
-      <a href="TILA/formaciones" class={styles.button}>Explorar Formaciones</a>
-      <a href="TILA/workshops" class={styles.button}>Ver Workshops</a>
-      <a href="TILA/blog" class={styles.button}>Leer Blog</a>
-      <a href="TILA/tila" class={styles.button}>Sobre Nosotros</a>
+      <a href={`${base}formaciones`} class={styles.button}>Explorar Formaciones</a>
+      <a href={`${base}workshops`} class={styles.button}>Ver Workshops</a>
+      <a href={`${base}blog`} class={styles.button}>Leer Blog</a>
+      <a href={`${base}tila`} class={styles.button}>Sobre Nosotros</a>
     </div>
   </section>
 
