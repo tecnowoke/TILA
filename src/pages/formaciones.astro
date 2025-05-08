@@ -1,27 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import styles from "../styles/formaciones.module.css";
-
-const formaciones = [
-  {
-    titulo: "Masaje Abhyanga",
-    subtitulo: "Terapia tradicional ayurvédica",
-    descripcion: "Aprende esta técnica ancestral para equilibrar cuerpo y mente.",
-    enlace: "/formaciones/masaje-abhyanga",
-  },
-  {
-    titulo: "Marma Chikitsa",
-    subtitulo: "Sanación a través de puntos energéticos",
-    descripcion: "Explora los puntos marmas y su impacto en la salud.",
-    enlace: "/formaciones/marma-chikitsa",
-  },
-  {
-    titulo: "Técnicas Avanzadas",
-    subtitulo: "Profundización en terapias ayurvédicas",
-    descripcion: "Para quienes buscan perfeccionar su conocimiento en Ayurveda.",
-    enlace: "/formaciones/tecnicas-avanzadas",
-  }
-];
+import { formaciones } from "../data/formaciones.js";
 ---
 
 <Layout>
@@ -31,11 +11,11 @@ const formaciones = [
     
     <ul class={styles.list}>
       {formaciones.map((curso) => (
-        <li class={styles.card}>
+        <li class={styles.card} key={curso.slug}>
           <h2>{curso.titulo}</h2>
           <h3>{curso.subtitulo}</h3>
           <p class={styles.description}>{curso.descripcion}</p>
-          <a href={curso.enlace} class={styles.button}>Ver más</a>
+          <a href={`/TILA/formacion/${curso.slug}`} class={styles.button}>Ver más</a>
         </li>
       ))}
     </ul>

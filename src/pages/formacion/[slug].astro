@@ -1,0 +1,47 @@
+---
+// src/pages/formacion/[slug].astro
+import Layout from '../../layouts/Layout.astro';
+import { formaciones, Curso } from '../../data/formaciones.ts'; // Asegúrate de importar el tipo 'Curso'
+
+// Generar las rutas dinámicas
+export async function getStaticPaths() {
+  const paths = formaciones.map((curso) => ({
+    params: { slug: curso.slug },
+  }));
+
+  console.log("Generated paths:", paths);  // Ver los paths generados
+
+  return paths;
+}
+
+// Función para obtener los datos del curso basado en el slug
+export async function get({ params }) {
+  const curso: Curso | undefined = formaciones.find((c) => c.slug === params.slug);
+
+  console.log("Fetching curso for slug:", params.slug);  // Ver qué slug estás buscando
+  console.log("Found curso:", curso);  // Ver el curso que se encuentra
+
+  if (!curso) {
+    return {
+      status: 404,
+      body: 'Curso no encontrado',
+    };
+  }
+
+  return {
+    props: { curso },
+  };
+}
+
+const { curso } = Astro.props; // 'curso' tiene el tipo 'Curso' ahora
+
+console.log("Curso passed to template:", curso);  // Ver los datos del curso pasados a la plantilla
+---
+
+<Layout title={curso?.titulo || "Curso no encontrado"}>
+  <section>
+    <h1>{curso?.titulo || "No se pudo cargar el título"}</h1>
+    <h2>{curso?.subtitulo || "No se pudo cargar el subtítulo"}</h2>
+    <p>{curso?.descripcion || "No se pudo cargar la descripción"}</p>
+  </section>
+</Layout>
