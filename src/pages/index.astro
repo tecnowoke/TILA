@@ -10,13 +10,25 @@ import TestimoniosBloque from "../components/TestimoniosBloque.astro";
 import Slider from "./Slider.astro"
 
 const slides = [
-  { title: "Primer título", subtitle: "Esta es la bajada del primer slide.", buttonText: "Ver más", buttonLink: "#1" },
-  { title: "Segundo título", subtitle: "Bajada del segundo contenido destacado.", buttonText: "Explorar", buttonLink: "#2" },
-  { title: "Tercer título", subtitle: "Texto informativo del tercer elemento.", buttonText: "Leer", buttonLink: "#3" },
-  { title: "Cuarto título", subtitle: "Bajada para el cuarto ítem del carrusel.", buttonText: "Detalles", buttonLink: "#4" },
-  { title: "Quinto título", subtitle: "Resumen breve del quinto contenido.", buttonText: "Saber más", buttonLink: "#5" },
+  {
+    title: 'Título 1',
+    subtitle: 'Esta es la bajada o descripción del slide 1',
+    buttonText: 'Ver más',
+    buttonLink: '/pagina1'
+  },
+  {
+    title: 'Título 2',
+    subtitle: 'Esta es la bajada o descripción del slide 2',
+    buttonText: 'Comprar',
+    buttonLink: '/pagina2'
+  },
+  {
+    title: 'Título 3',
+    subtitle: 'Esta es la bajada o descripción del slide 3',
+    buttonText: 'Contactar',
+    buttonLink: '/pagina3'
+  }
 ];
-
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -32,7 +44,7 @@ const base = import.meta.env.BASE_URL;
 
    <section class={styles.section}>
   <!-- Carrusel -->
-  <Slider client:load slides={slides} />
+<Slider slides={slides} />
 
 </section>
 
