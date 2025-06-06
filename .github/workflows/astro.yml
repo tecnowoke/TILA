@@ -26,7 +26,7 @@ jobs:
         with:
           package-manager: pnpm
           pnpm-version: 8
-          # node-version: 20 # opcional
+          node-version: 20 
 
   deploy:
     needs: build
