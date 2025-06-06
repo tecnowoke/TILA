@@ -14,7 +14,7 @@ import { formaciones } from "../data/formaciones.js";
     
     <ul class={styles.list}>
       {formaciones.map((curso) => (
-        <li class={styles.card} key={curso.slug}>
+        <li class={styles.card}>
           <h2>{curso.titulo}</h2>
           <h3>{curso.subtitulo}</h3>
           <p class={styles.description}>{curso.descripcion}</p>

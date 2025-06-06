@@ -1,6 +1,6 @@
 const SHEET_ID = '1nP83DprTj83JsV0fKSjSTkw4jxI99-Ha0bemI372iq8'; // Reemplaza con tu ID de Google Sheets
 const API_KEY = 'AIzaSyB1F8PIVoZYypVWZhCoWYVkd39ISzwNbw0'; // Reemplaza con tu clave API
-const RANGE = '1!A2:E20'; // El rango de tu hoja de cálculo (Hoja "1", columnas A-E, filas 2-20)
+const RANGE = 'inicio!A2:E20'; // El rango de tu hoja de cálculo (Hoja "1", columnas A-E, filas 2-20)
 
 // Función para obtener los datos de Google Sheets
 async function obtenerDatos() {
