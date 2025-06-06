@@ -1,0 +1,112 @@
+---
+import Navbar from "./Navbar.astro";
+import Footer from "./Footer.astro";
+
+const terapeutas = [
+  {
+    nombre: "Ana Martínez",
+    descripcion: "Especialista en terapias holísticas y masaje terapéutico.",
+    contacto: "ana.martinez@email.com"
+  },
+  {
+    nombre: "Carlos Gómez",
+    descripcion: "Terapeuta en medicina tradicional y técnicas de relajación.",
+    contacto: "carlos.gomez@email.com"
+  },
+  {
+    nombre: "Lucía Fernández",
+    descripcion: "Experta en reiki y sanación energética.",
+    contacto: "lucia.fernandez@email.com"
+  },
+  {
+    nombre: "Jorge Ramírez",
+    descripcion: "Terapias manuales y acupuntura.",
+    contacto: "jorge.ramirez@email.com"
+  },
+  {
+    nombre: "María López",
+    descripcion: "Especialista en aromaterapia y fitoterapia.",
+    contacto: "maria.lopez@email.com"
+  },
+  {
+    nombre: "Diego Torres",
+    descripcion: "Masajes deportivos y técnicas de rehabilitación.",
+    contacto: "diego.torres@email.com"
+  },
+  {
+    nombre: "Sofía Pérez",
+    descripcion: "Terapias de meditación y mindfulness.",
+    contacto: "sofia.perez@email.com"
+  },
+  {
+    nombre: "Fernando Díaz",
+    descripcion: "Especialista en osteopatía y quiropraxia.",
+    contacto: "fernando.diaz@email.com"
+  },
+  {
+    nombre: "Valentina Ruiz",
+    descripcion: "Terapias energéticas y coaching de bienestar.",
+    contacto: "valentina.ruiz@email.com"
+  },
+  {
+    nombre: "Martín Castillo",
+    descripcion: "Masajes relajantes y técnicas de respiración.",
+    contacto: "martin.castillo@email.com"
+  }
+];
+---
+
+<style>
+  section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h2 {
+    color: var(--primary-color, #8B5E3B);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  .nombre {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--accent-color, #A47E58);
+  }
+  .descripcion {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: var(--text-color, #3E2723);
+  }
+  .contacto {
+    font-size: 0.9rem;
+    color: var(--secondary-color, #D9B382);
+  }
+</style>
+
+<section>
+      <Navbar/>
+  <h2>Terapeutas</h2>
+  <ul>
+    {terapeutas.map(({ nombre, descripcion, contacto }) => (
+      <li>
+        <p class="nombre">{nombre}</p>
+        <p class="descripcion">{descripcion}</p>
+        <p class="contacto">Contacto: {contacto}</p>
+      </li>
+    ))}
+  </ul>
+    <Footer/>
+</section>

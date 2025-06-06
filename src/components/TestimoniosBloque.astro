@@ -1,0 +1,72 @@
+---
+const testimonios = [
+  {
+    nombre: "Nombre 1",
+    testimonio: "Me encantó buenisimo todo, hermoso laburo."
+  },
+  {
+    nombre: "Nombre 2",
+    testimonio: "Otro ejemplo de testimonio escrito."
+  }
+];
+---
+
+<style>
+  section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  h2 {
+    color: var(--primary-color, #8B5E3B);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonios-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .testimonios-item {
+    background-color: var(--background-color, #FAF3E0);
+    border: 1px solid var(--accent-color, #A47E58);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    width: 220px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .testimonios-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .testimonios-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color, #D9B382);
+    font-size: 1.3rem;
+  }
+
+  .testimonios-item p {
+    font-size: 1rem;
+    color: var(--text-color, #3E2723);
+    margin: 0;
+  }
+</style>
+
+<section>
+  <h2>  testimonios</h2>
+  <div class="workshop-list">
+    {testimonios.map(({ nombre, testimonio }) => (
+      <article class="workshop-item" key={nombre}>
+        <p>{testimonio}</p>
+        <h3>{nombre}</h3>
+      </article>
+    ))}
+  </div>
+</section>

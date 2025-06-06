@@ -1,0 +1,83 @@
+---
+// src/components/Slider.astro
+const { slides } = Astro.props;
+---
+
+<div class="slider-wrapper max-w-4xl mx-auto">
+  <div id="sliderTrack" class="slider-track">
+    {slides.map((slide) => (
+      <div class="slide p-8 flex flex-col items-start justify-center bg-gray-900 text-white rounded-lg">
+        <h2 class="text-3xl font-bold mb-2">{slide.title}</h2>
+        <p class="mb-4 text-lg">{slide.subtitle}</p>
+        <a href={slide.buttonLink} class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition">
+          {slide.buttonText}
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <button id="prevBtn" class="arrow left">‹</button>
+  <button id="nextBtn" class="arrow right">›</button>
+</div>
+
+<style>
+  .slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .arrow.left {
+    left: 0;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  .arrow.right {
+    right: 0;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+</style>
+
+<script is:client>
+  let currentSlide = 0;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("sliderTrack");
+    const prev = document.getElementById("prevBtn");
+    const next = document.getElementById("nextBtn");
+    const totalSlides = track.children.length;
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    prev.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    });
+
+    next.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    });
+  });
+</script>
