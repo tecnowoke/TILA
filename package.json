@@ -2,6 +2,7 @@
   "name": "tila",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@8.7.0",
   "scripts": {
     "dev": "astro dev",
     "generate-json": "node src/scripts/generarJson.js",
@@ -17,9 +18,7 @@
     "react-icons": "^5.5.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.2.8",
-    "packageManager": "pnpm@8.7.0"
-
+    "swiper": "^11.2.8"
   },
   "devDependencies": {
     "@types/node": "^22.15.17",
