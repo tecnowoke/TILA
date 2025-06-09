@@ -7,5 +7,4 @@ export default defineConfig({
   base: "/TILA/",
   output: "static",
   integrations: [react()],
-
 });
