@@ -1,6 +1,4 @@
 ---
-import Navbar from "./Navbar.astro";
-import Footer from "./Footer.astro";
 import Layout from "../layouts/Layout.astro";
 import styles from "../styles/tila.module.css";
 
@@ -12,7 +10,7 @@ const socialLinks = [
 ---
 
 <Layout>
-    <Navbar/>
+
   <section class={styles.container}>
     <h1>Sobre TILA</h1>
     <p>TILA Sembrar Salud es un espacio dedicado a la enseñanza y práctica del Ayurveda.</p>
@@ -30,5 +28,4 @@ const socialLinks = [
         </a>
       ))}
     </div>
-  <Footer/>
 </Layout>

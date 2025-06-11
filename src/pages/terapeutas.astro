@@ -1,6 +1,5 @@
 ---
-import Navbar from "./Navbar.astro";
-import Footer from "./Footer.astro";
+import Layout from '../layouts/Layout.astro';
 
 const terapeutas = [
   {
@@ -56,57 +55,57 @@ const terapeutas = [
 ];
 ---
 
-<style>
-  section {
-    padding: 2rem 1rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  h2 {
-    color: var(--primary-color, #8B5E3B);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    border-bottom: 1px solid #ccc;
-    padding: 1rem 0;
-  }
-  li:last-child {
-    border-bottom: none;
-  }
-  .nombre {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--accent-color, #A47E58);
-  }
-  .descripcion {
-    margin: 0.3rem 0;
-    font-size: 1rem;
-    color: var(--text-color, #3E2723);
-  }
-  .contacto {
-    font-size: 0.9rem;
-    color: var(--secondary-color, #D9B382);
-  }
-</style>
+<Layout>
+  <style>
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: var(--primary-color, #8B5E3B);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+    .nombre {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent-color, #A47E58);
+    }
+    .descripcion {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+      color: var(--text-color, #3E2723);
+    }
+    .contacto {
+      font-size: 0.9rem;
+      color: var(--secondary-color, #D9B382);
+    }
+  </style>
 
-<section>
-      <Navbar/>
-  <h2>Terapeutas</h2>
-  <ul>
-    {terapeutas.map(({ nombre, descripcion, contacto }) => (
-      <li>
-        <p class="nombre">{nombre}</p>
-        <p class="descripcion">{descripcion}</p>
-        <p class="contacto">Contacto: {contacto}</p>
-      </li>
-    ))}
-  </ul>
-    <Footer/>
-</section>
+  <section>
+    <h2>Terapeutas</h2>
+    <ul>
+      {terapeutas.map(({ nombre, descripcion, contacto }) => (
+        <li>
+          <p class="nombre">{nombre}</p>
+          <p class="descripcion">{descripcion}</p>
+          <p class="contacto">Contacto: {contacto}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>

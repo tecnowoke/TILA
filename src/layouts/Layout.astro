@@ -1,6 +1,13 @@
+---
+import Navbar from '../pages/Navbar.astro';
+import Footer from '../pages/Footer.astro';
+import Wh from '../components/Wh.astro';
+---
 <!doctype html>
 <html lang="en">
 	<head>
+		    <Navbar />
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,6 +17,9 @@
 	<body>
 		<slot />
 	</body>
+				    <Wh />
+			    <Footer />
+
 </html>
 
 <style>

@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "./Navbar.astro";
-import Footer from "./Footer.astro";
 import styles from "../styles/workshops.module.css";
 
 const workshops = [
@@ -21,7 +19,6 @@ const workshops = [
 ---
 
 <Layout>
-  <Navbar/>
   <section class={styles.container}>
     <h1>Workshops, Seminarios y Masterclass</h1>
     <p>Descubre nuestros talleres breves y especializados:</p>
@@ -37,5 +34,4 @@ const workshops = [
       ))}
     </ul>
   </section>
-  <Footer/>
 </Layout>
