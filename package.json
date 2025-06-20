@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "generate-json": "node src/scripts/generarJson.js",
-    "build": "npm run generate-json && astro build",
+    "build": "pnpm run generate-json && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

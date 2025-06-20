@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #8B5E3B;
-    --secondary-color: #D9B382;
+    --primary-color: #3A3737;
+    --secondary-color: #3A3737;
     --background-color: #FAF3E0;
-    --text-color: #3E2723;
-    --accent-color: #A47E58;
+    --text-color: #3A3737;
+    --accent-color: #3A3737;
   }
   
   .container {

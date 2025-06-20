@@ -1,0 +1,14 @@
+[build]
+command = "npm run generate-json && pnpm astro build"
+  publish = "dist"  
+
+[context.production.environment]
+  PNPM_VERSION = "8.7.0"  
+
+[build.environment]
+  NODE_VERSION = "v22.15.17" 
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200

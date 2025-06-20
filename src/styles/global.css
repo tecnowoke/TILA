@@ -1,0 +1,45 @@
+
+:root {
+  --Tila_VerdeOscuro: linear-gradient(to right, #3A3737cc 0%, #E5E6E3 100%);
+  --color-texto: #1a1a1a;
+  --color-fondo: #ffffff;
+  --fuente-principal: 'Literata', serif;
+  --borde-suave: 16px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--Tila_VerdeOscuro);
+  color: #3A3737;
+  font-family: "Merriweather", serif;
+}
+
+.navbar a {
+  color: #3A3737;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #E5E6E3;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
