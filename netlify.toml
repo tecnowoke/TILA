@@ -6,7 +6,7 @@ command = "npm run generate-json && pnpm astro build"
   PNPM_VERSION = "8.7.0"  
 
 [build.environment]
-  NODE_VERSION = "v22.15.17" 
+  NODE_VERSION = "18" 
 
 [[redirects]]
   from = "/admin/*"
