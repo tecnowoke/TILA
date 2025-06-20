@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   site: "https://tecnowoke.github.io",
-  base: "/TILA/",
+  base: "/",
   output: "static",
   integrations: [react()],
 });
