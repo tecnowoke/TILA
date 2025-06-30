@@ -41,7 +41,12 @@ const base = import.meta.env.BASE_URL;
     Sembrar Salud
     </h2>
     <p class={styles.subtitulo}>Un subtítulo que establezca el contexto, ofrezca más información sobre el sitio web o, en general, anime a los usuarios a seguir desplazándose.</p>
-      <img src={Vector1.src} alt="Decoración TILA" class={styles.Vector1} />
+        <img 
+        id="rotating-image" 
+        src={Vector1.src} 
+        alt="Decoración TILA" 
+        class={styles.Vector1} 
+      />
   </section>
 
    <section class={styles.section}>
@@ -62,6 +67,27 @@ const base = import.meta.env.BASE_URL;
 
 <!-- Importar el archivo JS, asegurándote de que la ruta sea correcta -->
 <script type="module" src="/scripts/actualizarJSON.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const image = document.getElementById('rotating-image');
+        let lastScrollY = window.scrollY;
+        let rotation = 0;
+
+        window.addEventListener('scroll', () => {
+          // Determinar dirección del scroll
+          const currentScrollY = window.scrollY;
+          const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+          lastScrollY = currentScrollY;
+
+          // Ajustar rotación (2 grados por evento)
+          rotation += scrollDirection === 'down' ? 0.5 : -0.5;
+          
+          // Aplicar rotación
+          image.style.transform = `rotate(${rotation}deg)`;
+        });
+      });
+    </script>
   </section>
 </Layout>
 
