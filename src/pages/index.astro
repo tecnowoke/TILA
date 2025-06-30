@@ -6,6 +6,7 @@ import WorkshopsBloque from '../components/WorkshopsBloque.astro';
 import UsBloque from '../components/UsBloque.astro';
 import TestimoniosBloque from "../components/TestimoniosBloque.astro";
 import Slider from "./Slider.astro";
+import Vector1 from '../assets/vectors/Vector1.png';
 
 const slides = [
   {
@@ -33,11 +34,15 @@ const base = import.meta.env.BASE_URL;
 
 
 <Layout>
-  <section class={styles.section}>
-    <h1 class={styles.h1}>TILA. Sembrar Salud</h1>
-    <p class={styles.bajada}>
-      Un subtítulo que establezca el contexto, ofrezca más información sobre el sitio web o, en general, anime a los usuarios a seguir desplazándose.
-    </p>
+  <section class={styles.home}>
+  <section class={styles.tilaSection}>
+    <h1 class={styles.titulo}>TILA</h1>
+    <h2 class={styles.slogan}>
+    Sembrar Salud
+    </h2>
+    <p class={styles.subtitulo}>Un subtítulo que establezca el contexto, ofrezca más información sobre el sitio web o, en general, anime a los usuarios a seguir desplazándose.</p>
+      <img src={Vector1.src} alt="Decoración TILA" class={styles.Vector1} />
+  </section>
 
    <section class={styles.section}>
   <!-- Carrusel -->

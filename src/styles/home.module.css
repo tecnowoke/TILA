@@ -1,45 +1,42 @@
-:root {
-  --primary-color: #3A3737; /* Un marrón cálido, inspirado en la tierra */
-  --secondary-color: #D9B382; /* Un tono arena suave */
-  --background-color: #FAF3E0; /* Beige claro para armonía */
-  --text-color: #3E2723; /* Marrón oscuro para contraste */
-  --accent-color: #A47E58; /* Un tono intermedio para detalles */
-}
-
-body {
-  font-family: "Merriweather", serif; /* Fuente elegante y legible */
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-}
-
-section {
-  padding: 3rem;
+.tilaSection{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 40px;
+}
+.titulo{font-size: 6rem;
+padding-top: 125px;
+margin: 0;
+  font-family: 'BeathanyEllingston' normal;
+    font-weight: lighter;
+          letter-spacing: 0.3rem; 
 }
 
-h1 {
-  color: var(--primary-color);
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: left;
+.slogan{
+    font-family: 'BeathanyEllingston' normal;
+    font-size: 3.5rem;
+    margin: 0;
+    padding-top: 1rem;
+      font-weight: lighter;
+      letter-spacing: 0.5rem; 
 }
 
-h2 {
-  color: var(--accent-color);
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.bajada {
-  font-size: 1.2rem;
+.subtitulo {
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.6;
-  margin: 0 auto;
-  text-align: left;
-  padding-right: 50vw;
+  margin: 0;
+  padding: 3rem 20vw;
+font-family: 'Futura Std', sans-serif;
+color: var(--Tila_Negro_80);
+                                                
+}
+
+
+.Vector1{
+  height: 90px;
+  width: 90px;
+  margin: auto;
 }
 
 .animatedText {
@@ -69,16 +66,6 @@ h2 {
 .button:hover {
   background-color: var(--accent-color);
   transform: scale(1.05);
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  font-size: 1.2rem;
-  padding: 0.5rem 0;
 }
 
 .carousel {

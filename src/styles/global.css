@@ -1,11 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+
+
+@font-face {
+  font-family: 'BeathanyEllingston';
+  src: url('/fonts/BeathanyEllingston.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  box-sizing: border-box;
+}
 
 :root {
-  --Tila_VerdeOscuro: linear-gradient(to right, #3A3737cc 0%, #E5E6E3 100%);
-  --color-texto: #1a1a1a;
-  --color-fondo: #ffffff;
-  --fuente-principal: 'Literata', serif;
-  --borde-suave: 16px;
+  /* Verdes */
+  --Tila_Verde_100: #21BD74;
+  --Tila_VerdeIntens_100: #21BD74;
+
+  /* Negros */
+  --Tila_Negro_100: #2D2D2D;
+  --Tila_Negro_80: rgba(45, 45, 45, 0.8);
+
+  /* Dorado */
+  --Tila_Dorado_100: #D2CBB9;
+
+  /* Blancos */
+  --Tila_Blanco_100: #F9FAF5;
+  --Tila_Blanco_80: rgba(249, 250, 245, 0.95);  
 }
+
 
 html, body {
   margin: 0;
@@ -13,33 +38,61 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: var(--fuente-principal);
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
+  background-color: var(--Tila_Blanco_100);
+  color: var(--Tila_Negro_100);
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 0rem 0.8rem 0rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: var(--Tila_VerdeOscuro);
-  color: #3A3737;
+  background-color: var(--Tila_Blanco_100);
+  color: var(--Tila_Negro_100);
   font-family: "Merriweather", serif;
+  z-index: 1;
+  box-sizing: border-box;
 }
 
-.navbar a {
-  color: #3A3737;
-  text-decoration: none;
+.navbar > .navbar-content {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
+
 
 .navbar a:hover {
-  color: #E5E6E3;
+  color: var(--Tila_VerdeIntens_100);
 }
 
-.navbar ul {
+
+.navbar-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
   margin: 0;
   padding: 0;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: var(--Tila_Negro_100);
+  font-family: var(--font-Tila-NavBar, 'Bebas Neue', sans-serif);
+  font-size: 16px;
+  line-height: 8px;
+  letter-spacing: 1.6px;
+  text-align: center;
+}
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
 }

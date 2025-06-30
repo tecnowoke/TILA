@@ -3,16 +3,19 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <nav class="navbar">
-  <div style="font-size: 1.5rem; font-weight: bold;">
-    <a href={base}>TILA</a>
-  </div>
+  <div class="navbar-content">
+    <div class="logo">
+      <a href={base}>TILA</a>
+    </div>
 
-  <ul>
-    <li><a href={base}>Inicio</a></li>
-    <li><a href={`${base}tila`}>Quienes somos</a></li>
-    <li><a href={`${base}formaciones`}>Formaciones</a></li>
-    <li><a href={`${base}workshops`}>Talleres</a></li>
-    <li><a href={`${base}terapeutas`}>Terapeutas</a></li>
-    <li><a href={`${base}blog`}>Blog</a></li>
-  </ul>
+    <ul class="navbar-links">
+      <li><a href={base}>Inicio</a></li>
+      <li><a href={`${base}tila`}>Nosotros</a></li>
+      <li><a href={`${base}formaciones`}>Formaciones</a></li>
+      <li><a href={`${base}workshops`}>Cursos</a></li>
+      <li><a href={`${base}blog`}>Blog</a></li>
+      <li><a href={`${base}terapeutas`}>Busca terapeuta</a></li>
+    </ul>
+  </div>
 </nav>
+
