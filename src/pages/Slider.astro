@@ -1,124 +1,37 @@
 ---
+import styles from '../styles/slider.module.css';
 const { slides = [] } = Astro.props;
-
-// Para manejar estado y lógica usaremos JS nativo en <script> del cliente
 ---
 
-<style>
-  .slider {
-    position: relative;
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
-    background: #222;
-    border-radius: 8px;
-    color: white;
-    font-family: sans-serif;
-  }
-
-  .slides {
-    display: flex;
-    transition: transform 0.4s ease-in-out;
-    will-change: transform;
-  }
-
-  .slide {
-    min-width: 100%;
-    padding: 2rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .slide h2 {
-    margin: 0 0 0.5rem;
-  }
-
-  .slide p {
-    margin: 0 0 1.5rem;
-    opacity: 0.8;
-  }
-
-  .slide a.button {
-    align-self: flex-start;
-    background: #2563eb;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(37, 99, 235, 0.8);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    padding: 0.3rem 0.8rem;
-    cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
-    transition: background 0.3s;
-  }
-  .nav-arrow:hover {
-    background: #1e40af;
-  }
-  .nav-arrow:focus {
-    outline: 2px solid #93c5fd;
-  }
-
-  .nav-prev {
-    left: 10px;
-  }
-
-  .nav-next {
-    right: 10px;
-  }
-
-  .pagination {
-    text-align: center;
-    padding: 1rem 0.5rem;
-  }
-
-  .pagination button {
-    background: #444;
-    border: none;
-    width: 12px;
-    height: 12px;
-    margin: 0 6px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .pagination button.active,
-  .pagination button:hover {
-    background: #2563eb;
-  }
-</style>
-
-<div class="slider" id="slider">
-  <div class="slides" id="slides" style="transform: translateX(0%)">
-    {slides.map((slide: { title: unknown; subtitle: unknown; buttonLink: string | URL | null | undefined; buttonText: unknown; }) => (
-      <div class="slide">
-        <h2>{slide.title}</h2>
+<div class={styles.slider} id="slider">
+  <div class={styles.slides} id="slides" style="transform: translateX(0%)">
+    {slides.map((slide, i) => (
+      <div class={styles.slide} key={i}>
         <p>{slide.subtitle}</p>
-        <a href={slide.buttonLink} class="button">{slide.buttonText}</a>
+        <h2>{slide.title}</h2>
+        <a href={slide.buttonLink} class={styles.button}>{slide.buttonText}</a>
       </div>
     ))}
   </div>
-
-  <button aria-label="Previous Slide" class="nav-arrow nav-prev" id="prevBtn">&#10094;</button>
-  <button aria-label="Next Slide" class="nav-arrow nav-next" id="nextBtn">&#10095;</button>
-
-  <div class="pagination" id="pagination">
-    {slides.map((_: any, i: unknown) => (
-      <button aria-label={`Go to slide ${i + 1}`} data-index={i} class={i === 0 ? 'active' : ''}></button>
+  <section class={styles.pieDeCarrousel}>
+    
+  <div class={styles.pagination} id="pagination">
+    {slides.map((_, i) => (
+      <button
+        aria-label={`Go to slide ${i + 1}`}
+        data-index={i}
+        class={i === 0 ? `${styles.paginationButton} ${styles.paginationButtonActive}` : styles.paginationButton}
+        key={i}
+      ></button>
     ))}
   </div>
+  <section class={styles.arrowSection}>
+    <button aria-label="Previous Slide" class={`${styles.navArrow} ${styles.navPrev}`} id="prevBtn">&#10094;</button>
+    <button aria-label="Next Slide" class={`${styles.navArrow} ${styles.navNext}`} id="nextBtn">&#10095;</button>
+  </section>
+
+</section>
+
 </div>
 
 <script is:inline>
@@ -134,7 +47,7 @@ const { slides = [] } = Astro.props;
   function updateSlider() {
     slidesEl.style.transform = `translateX(-${currentIndex * 100}%)`;
     dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentIndex);
+      dot.classList.toggle('${styles.paginationButtonActive}', i === currentIndex);
     });
   }
 
@@ -157,5 +70,4 @@ const { slides = [] } = Astro.props;
       }
     });
   });
-  
 </script>

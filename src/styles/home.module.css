@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 2rem 40px;
 }
+
 .titulo{font-size: 6rem;
 padding-top: 125px;
 margin: 0;
@@ -39,11 +40,54 @@ color: var(--Tila_Negro_80);
   margin: auto;
 }
 
-.animatedText {
+.decoSection {
+  width: 100%;
+  display: flex;              /* activar flexbox */
+  justify-content: center;    /* centrar horizontalmente */
+  align-items: center;        /* centrar verticalmente si quieres */
+  margin: auto;
+}
+
+.Vector2 {
+  height: 20vw;
+  width: 20vw;
+  object-fit: contain;
+  margin-top: -15rem;
+}
+
+.Vector3 {
+  height: 90px;
+  width: 90px;
+  margin: auto;
+}
+
+.Vector1, .Vector2, .Vector3 {
+  transform-origin: center center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.growing-image {
+  /* Si usas clase específica */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+
+.animatedSection {
   font-size: 1.2rem;
   line-height: 1.6;
   margin: 0 auto;
+  padding: 8rem 10vw 4rem 10vw;
+}
+
+.animatedText {
+  font-family: 'BeathanyEllingston' normal;
+  font-weight: lighter;
+  font-size: 2.5rem;
+  line-height: 0.9;
+  margin: 0 auto;
   padding: 0 10vw;
+  letter-spacing: -0.1rem; 
+
 }
 
 .ctabuttons {

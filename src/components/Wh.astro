@@ -1,6 +1,7 @@
 ---
 const { phone = "54000000000" } = Astro.props;
 const whatsappUrl = `https://wa.me/${phone}`;
+import chatIcon from "../assets/vectors/Chat.svg"
 ---
 
 <style>
@@ -9,10 +10,9 @@ const whatsappUrl = `https://wa.me/${phone}`;
     bottom: 3rem;
     right: 3rem;
     z-index: 1000;
-    background-color: #25d366;
-    border-radius: 50%;
+    background-color: var(--Tila_Blanco_100);
+    border-radius: 5px;
     padding: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease;
   }
 
@@ -35,7 +35,7 @@ const whatsappUrl = `https://wa.me/${phone}`;
   aria-label="Chatear por WhatsApp"
 >
   <img
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    src={chatIcon.src}
     alt="WhatsApp"
   />
 </a>

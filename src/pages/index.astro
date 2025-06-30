@@ -3,15 +3,17 @@ import styles from "../styles/home.module.css";
 import Layout from "../layouts/Layout.astro";
 import FormacionesBloque from '../components/FormacionesBloque.astro';
 import WorkshopsBloque from '../components/WorkshopsBloque.astro';
-import UsBloque from '../components/UsBloque.astro';
 import TestimoniosBloque from "../components/TestimoniosBloque.astro";
 import Slider from "./Slider.astro";
-import Vector1 from '../assets/vectors/Vector1.png';
+import Vector2 from '../assets/vectors/Vector2.svg';
+import Vector1 from '../assets/vectors/Vector1.svg';
+import Vector6 from '../assets/vectors/Vector6.svg';
+
 
 const slides = [
   {
-    title: 'Título 1',
-    subtitle: 'Esta es la bajada o descripción del slide 1',
+    title: 'Anuncio TILA Sembrar Salud',
+    subtitle: 'Un subtítulo que establezca el contexto, ofrezca más información sobre el sitio web o, en general, anime a los usuarios a seguir desplazándose.',
     buttonText: 'Ver más',
     buttonLink: '/pagina1'
   },
@@ -43,7 +45,7 @@ const base = import.meta.env.BASE_URL;
     <p class={styles.subtitulo}>Un subtítulo que establezca el contexto, ofrezca más información sobre el sitio web o, en general, anime a los usuarios a seguir desplazándose.</p>
         <img 
         id="rotating-image" 
-        src={Vector1.src} 
+        src={Vector2.src} 
         alt="Decoración TILA" 
         class={styles.Vector1} 
       />
@@ -55,13 +57,30 @@ const base = import.meta.env.BASE_URL;
 
 </section>
 
-<section>
-  <p class={styles.animatedText}>Cuerpo de texto para lo que quieras decir. Añade puntos principales, citas, anécdotas. Cuerpo de texto para lo que quieras añadir más al punto principal. Proporciona detalles, explicaciones y contexto. Cuerpo de texto para lo que quieras añadir más al punto principal. Proporciona detalles. Cuerpo de texto para lo que quieras que quieras añadir al punto principal.</p>
+<section class={styles.animatedSection}>
+    <div class={styles.decoSection}>
+
+    <img 
+        id="growing-image" 
+        src={Vector6.src} 
+        alt="Decoración TILA" 
+        class={styles.Vector2} 
+      />
+      </div>
+  <p class={styles.animatedText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in justo venenatis, congue orci at, viverra felis. Suspendisse dignissim  vulputate finibus. Aliquam nec ex nisi. Sed suscipit, nulla eu luctus  commodo, lacus justo dapibus odio, eu faucibus tortor felis at mi. Duis  in mollis ligula, eu vulputate odio. </p>
+  <div class={styles.decoSection}>
+     <img 
+        id="rotating90-image" 
+        src={Vector1.src} 
+        alt="Decoración TILA" 
+        class={styles.Vector3} 
+      />
+    </div>  
+ 
 </section>
 
 <FormacionesBloque/>
 <WorkshopsBloque/>
-<UsBloque/>
 <TestimoniosBloque/>
 
 
@@ -69,24 +88,47 @@ const base = import.meta.env.BASE_URL;
 <script type="module" src="/scripts/actualizarJSON.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const image = document.getElementById('rotating-image');
-        let lastScrollY = window.scrollY;
-        let rotation = 0;
+   document.addEventListener('DOMContentLoaded', () => {
+  const rotatingImage = document.getElementById('rotating-image'); // Vector2
+  const rotating90Image = document.getElementById('rotating90-image'); // Vector1
+  const growingImage = document.getElementById('growing-image'); // Vector6
 
-        window.addEventListener('scroll', () => {
-          // Determinar dirección del scroll
-          const currentScrollY = window.scrollY;
-          const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
-          lastScrollY = currentScrollY;
+  // Rango de scroll para la animación (en px)
+  const animationRange = 300;
 
-          // Ajustar rotación (2 grados por evento)
-          rotation += scrollDirection === 'down' ? 0.5 : -0.5;
-          
-          // Aplicar rotación
-          image.style.transform = `rotate(${rotation}deg)`;
-        });
-      });
+  window.addEventListener('scroll', () => {
+    const viewportHeight = window.innerHeight;
+
+    // Función para calcular progreso entre 0 y 1 según posición del elemento
+    function getScrollProgress(el) {
+      const rect = el.getBoundingClientRect();
+      // Cuando el elemento está justo entrando por abajo viewport, progress=0
+      // Cuando el elemento sube 'animationRange' px dentro del viewport, progress=1
+      const progress = 1 - (rect.top / animationRange);
+      return Math.min(Math.max(progress, 0), 1); // clamp entre 0 y 1
+    }
+
+    // 1. Rotación continua para rotatingImage (Vector2)
+    // Aquí puedes mantener rotación libre o sincronizar con scroll relativo
+    // Por ejemplo, rotación proporcional al scroll total:
+    const scrollY = window.scrollY;
+    rotatingImage.style.transform = `rotate(${scrollY * 0.1}deg)`;
+
+    // 2. Rotación progresiva 0° a 90° para rotating90Image (Vector1)
+    let progressRot90 = getScrollProgress(rotating90Image);
+    let rotation90 = progressRot90 * 180;
+    rotating90Image.style.transform = `rotate(${rotation90}deg)`;
+
+    // 3. Crecer y disolver growingImage (Vector6)
+    let progressGrow = getScrollProgress(growingImage);
+    let scale = 1 + progressGrow * 0.5; // escala 1 a 1.5
+    let opacity = 1 - progressGrow;      // opacidad 1 a 0
+    growingImage.style.transform = `scale(${scale})`;
+    growingImage.style.opacity = opacity;
+  });
+});
+
+
     </script>
   </section>
 </Layout>

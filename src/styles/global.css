@@ -16,7 +16,7 @@
 
 :root {
   /* Verdes */
-  --Tila_Verde_100: #21BD74;
+  --Tila_Verde_100: #A9C8B6;
   --Tila_VerdeIntens_100: #21BD74;
 
   /* Negros */
@@ -54,7 +54,7 @@ html, body {
   background-color: var(--Tila_Blanco_100);
   color: var(--Tila_Negro_100);
   font-family: "Merriweather", serif;
-  z-index: 1;
+  z-index: 3;
   box-sizing: border-box;
 }
 
@@ -89,10 +89,15 @@ html, body {
   letter-spacing: 1.6px;
   text-align: center;
 }
-.navbar .logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-  text-align: left;
-}
+  .navbar .logo a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    text-align: left;
+  }
+  .logoImg {
+    display: block;
+    max-width: 100%;
+    height: 4rem;
+    margin-top: -1.2rem;
+  }
