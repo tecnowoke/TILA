@@ -3,7 +3,7 @@
 import styles from "../styles/tarjeta.module.css";
 
 const {
-  index,          // ← nuevo
+  index,         
   nombre,
   bajada,
   texto,
@@ -13,7 +13,6 @@ const {
   mail
 } = Astro.props;
 
-// si el índice es par: normal; si es impar: invertido
 const invert = index % 2 === 1;
 ---
 
@@ -22,8 +21,6 @@ const invert = index % 2 === 1;
     <h2 class={styles.nombre}>{nombre}</h2>
     <h3 class={styles.bajada}>{bajada}</h3>
   </header>
-
-  <!-- “contenido” tendrá .invert cuando toque -->
   <div class={`${styles.contenido} ${invert ? styles.invert : ''}`}>
     <div class={styles.media}>
       <img src={imagen} alt={`Foto de ${nombre}`} class={styles.imagen} loading="lazy" />

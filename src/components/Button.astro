@@ -12,15 +12,23 @@ const { href = "#", variant = "primary" } = Astro.props;
     border-radius: 4px;
     font-weight: 600;
     height: fit-content;
-    padding: 5px 10px;
+    padding: 15px 20px;
     text-decoration: none;
     transition: background 0.2s, color 0.2s;
   }
 
   /* variante por defecto */
   .button.primary {
-    background: #2563eb;
-    color: #fff;
+    color: var(--Tila_Blanco_100);
+    font-family: 'Futura Std', sans-serif;
+      font-weight: lighter;
+      border-radius: 30px;
+  }
+
+    .button.primary:hover {
+    color: var(--Tila_Blanco_100);
+    background-color: var(--Tila_Verde_100);
+
   }
 
   /* variante dorada */

@@ -1,4 +1,6 @@
 ---
+import ButtonTila from "../components/Button.astro";
+
 const formaciones = [
   {
     titulo: "Masaje Abhyanga",
@@ -81,6 +83,8 @@ const formaciones = [
       <article class="formacion-item">
         <h3>{titulo}</h3>
         <p>{descripcion}</p>
+        <ButtonTila href="https://tila-sembrar-salud.tiendup.com/login" variant="primary">
++ INFORMACIÓN      </ButtonTila>
       </article>
     ))}
   </div>
