@@ -1,0 +1,97 @@
+.tarjeta {
+  padding: 2rem;
+  margin-block: 2rem;
+  width: 790px;
+  margin: auto;
+}
+
+.nombre {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+  color: var(--Tila_VerdeIntens_100);
+  font-family: var(--font-Tila-NavBar, 'Bebas Neue', sans-serif);
+  font-weight: lighter;
+  line-height: 1.5;
+  letter-spacing: 0.25rem;
+}
+
+.bajada {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0.25rem 0 1.5rem;
+  text-align: left;
+  color: var(--Tila_Negro_80);
+   font-family: 'BeathanyEllingston' normal;
+     font-weight: lighter;
+
+}
+
+.contenido {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+    flex-direction: row-reverse;
+
+}
+
+/* NUEVO: invierte las columnas */
+.invert {
+  flex-direction: row;
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.imagen {
+  width: 220px;
+  height: 328px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.redes {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.redes img {
+  width: 28px;
+  transition: transform 0.2s;
+}
+
+.redes img:hover {
+  transform: scale(1.15);
+}
+
+.texto {
+  flex: 1;               /* ocupa todo el ancho restante */
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+  color: var(--Tila_Verde_100);
+  width: 407px;
+font-family: 'Futura Std', sans-serif;
+
+}
+
+/* ---- responsive: pila en móviles ---- */
+@media (max-width: 640px) {
+  .contenido {
+    flex-direction: column;
+  }
+
+  .media {
+    align-items: center;
+  }
+
+  .texto {
+    margin-top: 1.25rem;
+  }
+}

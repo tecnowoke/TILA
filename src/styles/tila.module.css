@@ -1,59 +1,14 @@
-:root {
-    --primary-color: #3A3737;
-    --secondary-color: #3A3737;
-    --background-color: #FAF3E0;
-    --text-color: #3A3737;
-    --accent-color: #3A3737;
-  }
-  
   .container {
     text-align: center;
     padding: 3rem 1rem;
-    background-color: var(--background-color);
+    background-color: var(--Tila_Blanco_100);
   }
   
-  h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 1.5rem;
-    line-height: 1.6;
-  }
-  
-  .imageContainer {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-  }
-  
-  .image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .socialLinks {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  
-  .socialIcon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .socialIcon:hover {
-    transform: scale(1.1);
-  }
-  
+h1 {
+  color: var(--Tila_Negro_80);
+  font-size: 2.5rem;
+  font-family: var(--font-Tila-NavBar, 'Bebas Neue', sans-serif);
+  line-height: 1.5;
+  letter-spacing: 0.25rem;
+  font-weight: lighter;
+}

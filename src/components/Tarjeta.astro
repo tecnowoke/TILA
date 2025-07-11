@@ -1,0 +1,52 @@
+---
+// Tarjeta.astro
+import styles from "../styles/tarjeta.module.css";
+
+const {
+  index,          // ← nuevo
+  nombre,
+  bajada,
+  texto,
+  imagen,
+  instagram,
+  facebook,
+  mail
+} = Astro.props;
+
+// si el índice es par: normal; si es impar: invertido
+const invert = index % 2 === 1;
+---
+
+<article class={styles.tarjeta}>
+  <header>
+    <h2 class={styles.nombre}>{nombre}</h2>
+    <h3 class={styles.bajada}>{bajada}</h3>
+  </header>
+
+  <!-- “contenido” tendrá .invert cuando toque -->
+  <div class={`${styles.contenido} ${invert ? styles.invert : ''}`}>
+    <div class={styles.media}>
+      <img src={imagen} alt={`Foto de ${nombre}`} class={styles.imagen} loading="lazy" />
+
+      <div class={styles.redes}>
+        {instagram && (
+          <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="src/assets/ig.svg" alt="Instagram" />
+          </a>
+        )}
+        {facebook && (
+          <a href={facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="src/assets/fb.svg" alt="Facebook" />
+          </a>
+        )}
+        {mail && (
+          <a href={`mailto:${mail}`} aria-label="Email">
+            <img src="src/assets/mail.svg" alt="Email" />
+          </a>
+        )}
+      </div>
+    </div>
+
+    <p class={styles.texto}>{texto}</p>
+  </div>
+</article>
