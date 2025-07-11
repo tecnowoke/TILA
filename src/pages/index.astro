@@ -79,8 +79,13 @@ const base = import.meta.env.BASE_URL;
  
 </section>
 
-<FormacionesBloque/>
-<WorkshopsBloque/>
+<section id="formaciones">
+  <FormacionesBloque />
+</section>
+
+<section id="workshops">
+  <WorkshopsBloque />
+</section>
 <TestimoniosBloque/>
 
 
@@ -117,7 +122,7 @@ const base = import.meta.env.BASE_URL;
     // 2. Rotación progresiva 0° a 90° para rotating90Image (Vector1)
     let progressRot90 = getScrollProgress(rotating90Image);
     let rotation90 = progressRot90 * 180;
-    rotating90Image.style.transform = `rotate(${rotation90}deg)`;
+    rotating90Image.style.transform = `rotate(${rotation45}deg)`;
 
     // 3. Crecer y disolver growingImage (Vector6)
     let progressGrow = getScrollProgress(growingImage);

@@ -1,21 +1,28 @@
 ---
+import ButtonTila from "../components/Button.astro";
 const base = import.meta.env.BASE_URL;
 ---
-
 <nav class="navbar">
   <div class="navbar-content">
+    <!-- Columna izquierda -->
     <div class="logo">
       <a href={base}>
-  <img src="src/assets/img/tila.png" class="logoImg"/> </a>
+        <img src="/src/assets/img/tila.png" class="logoImg" />
+      </a>
     </div>
 
-    <ul class="navbar-links">
-      <li><a href={base}>Inicio</a></li>
-      <li><a href={`${base}tila`}>Nosotros</a></li>
-      <li><a href={`${base}formaciones`}>Formaciones</a></li>
-      <li><a href={`${base}workshops`}>Cursos</a></li>
-      <li><a href={`${base}blog`}>Blog</a></li>
-      <li><a href={`${base}terapeutas`}>Busca terapeuta</a></li>
-    </ul>
+    <!-- Columna derecha: links + botón -->
+    <div class="nav-actions">
+      <ul class="navbar-links">
+        <li><a href={base}>Inicio</a></li>
+        <li><a href={`${base}tila`}>Nosotros</a></li>
+ <li><a href={`${base}#formaciones`}>Formaciones</a></li>
+  <li><a href={`${base}#workshops`}>Cursos</a></li>
+      </ul>
+
+      <ButtonTila href="https://tila-sembrar-salud.tiendup.com/login" variant="dorado">
+        Iniciar sesión
+      </ButtonTila>
+    </div>
   </div>
 </nav>

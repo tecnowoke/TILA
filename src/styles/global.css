@@ -66,6 +66,11 @@ html, body {
   padding: 0 10px;
 }
 
+.nav-actions {
+  display: flex;          /* alinea en fila */
+  align-items: center;    /* centra verticalmente */
+  gap: 1.5rem;            /* separa lista y botón */
+}
 
 .navbar a:hover {
   color: var(--Tila_VerdeIntens_100);
