@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ButtonTila from '../../components/Button.astro';
+import { formaciones } from '../../data/formaciones';
+import styles from '../../styles/formaciones.module.css';
+
+export async function getStaticPaths() {
+  return formaciones.map(f => ({
+    params: { slug: f.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const formacion = formaciones.find(f => f.slug === slug);
+
+if (!formacion) {
+  throw new Error('Formación no encontrada');
+}
+
+const formacionActualSlug = slug; // Usar el slug actual para excluirlo
+const otrasFormaciones = formaciones.filter(f => f.slug !== formacionActualSlug);
+---
+
+<Layout title={formacion.titulo}>
+  <header class={styles.header} style={`background-image: url('${formacion.imagen}')`}>
+    <div class={styles.headerContent}>
+      <h1 class={styles.headerTitle}>{formacion.titulo}</h1>
+      <a href={formacion.linkPago} class={styles.headerLink}>INGRESAR</a>
+    </div>
+  </header>
+
+  <section class={styles.subtituloBlock}>
+    {formacion.subtitulo}
+  </section>
+
+  <section class={styles.infoBlock}>
+    <img src={formacion.imagen2} alt={formacion.titulo} class={styles.imagen2} />
+    <div class={styles.info}>
+      <h2 class={styles.nombre}>{formacion.titulo}</h2>
+      <p class={styles.modalidad}>{formacion.modalidad}</p>
+      <p class={styles.descripcion}>{formacion.descripcion}</p>
+      <button class={styles.btnInfo}>+ INFORMACIÓN</button>
+
+      <div class={styles.pagoBlock}>
+        <div class={styles.precios}>
+          <p class={styles.precioPesos}>{formacion.precioPesos}</p>
+          <p class={styles.precioDolares}>{formacion.precioDolares}</p>
+          <p class={styles.formasPago}>Pagando con: {formacion.formasPago}</p>
+        </div>
+        <button class={styles.btnComprar} onClick={() => window.location.href = formacion.linkPago}>Comprar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class={styles.textoImagenSection}>
+    <div class={styles.texto}>{formacion.descripcionLarga}</div>
+    <img src={formacion.imagen3} alt={formacion.titulo} class={styles.imagen3} />
+  </section>
+
+  <section class={styles.masFormaciones}>
+  <h3>Más Formaciones</h3>
+  <div class={styles.masFormacionesList}>
+    {otrasFormaciones.map(({ slug, titulo, descripcion, imagen }) => (
+      <article
+        class={styles.masFormacionItem}
+        style={`--bg-img: url('${imagen}')`}
+        key={slug}
+      >
+        <div class={styles.masFormacionContenido}>
+          <h4>{titulo}</h4>
+          <p>{descripcion}</p>
+          <ButtonTila href={`/formaciones/${slug}`} variant="primary" class={styles.masFormacionBtnInfo}>
+            + INFORMACIÓN
+          </ButtonTila>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+</Layout>
