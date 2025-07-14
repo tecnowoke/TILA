@@ -6,18 +6,16 @@ import { formaciones } from "../data/formaciones.js";
 
 <Layout>
   <section class={styles.container}>
-    <h1>Formaciones</h1>
-    <p>Explora nuestras formaciones sincrónicas en Ayurveda:</p>
-    
-    <ul class={styles.list}>
-      {formaciones.map((curso) => (
-        <li class={styles.card}>
-          <h2>{curso.titulo}</h2>
-          <h3>{curso.subtitulo}</h3>
-          <p class={styles.description}>{curso.descripcion}</p>
-          <a href={`/TILA/formacion/${curso.slug}`} class={styles.button}>Ver más</a>
-        </li>
-      ))}
-    </ul>
+    {formaciones.map((formacion) => (
+      <article key={formacion.id} class={styles.formacionCard}>
+        <h2>{formacion.nombre}</h2>
+        <h3>{formacion.subtitulo}</h3>
+        <p>{formacion.descripcion}</p>
+        <p><strong>Modalidad:</strong> {formacion.modalidad}</p>
+        <p><strong>Precio:</strong> {formacion.precio}</p>
+        <p><strong>Formas de pago:</strong> {formacion.formasPago}</p>
+        <a href={formacion.link} class={styles.infoLink}>+ INFORMACIÓN</a>
+      </article>
+    ))}
   </section>  
 </Layout>

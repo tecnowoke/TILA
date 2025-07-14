@@ -1,5 +1,6 @@
 ---
 import ButtonTila from "../components/Button.astro";
+import TilaLogoSrc from "../assets/img/tila.png";
 const base = import.meta.env.BASE_URL;
 ---
 <nav class="navbar">
@@ -7,7 +8,7 @@ const base = import.meta.env.BASE_URL;
     <!-- Columna izquierda -->
     <div class="logo">
       <a href={base}>
-        <img src="/src/assets/img/tila.png" class="logoImg" />
+        <img src={TilaLogoSrc.src} class="logoImg" />
       </a>
     </div>
 
