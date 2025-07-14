@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.cdnfonts.com/css/futura-std-4');
 
-
 @font-face {
   font-family: 'BeathanyEllingston';
   src: url('/fonts/BeathanyEllingston.ttf') format('truetype');
@@ -9,35 +8,27 @@
   font-style: normal;
 }
 
+:root {
+  --Tila_Verde_100: #A9C8B6;
+  --Tila_VerdeIntens_100: #21BD74;
+  --Tila_Negro_100: #2D2D2D;
+  --Tila_Negro_80: rgba(45, 45, 45, 0.8);
+  --Tila_Dorado_100: #D2CBB9;
+  --Tila_Blanco_100: #F9FAF5;
+  --Tila_Blanco_80: rgba(249, 250, 245, 0.95);
+  --font-Tila-NavBar: 'Bebas Neue', sans-serif;
+}
 
 * {
   box-sizing: border-box;
 }
-
-:root {
-  /* Verdes */
-  --Tila_Verde_100: #A9C8B6;
-  --Tila_VerdeIntens_100: #21BD74;
-
-  /* Negros */
-  --Tila_Negro_100: #2D2D2D;
-  --Tila_Negro_80: rgba(45, 45, 45, 0.8);
-
-  /* Dorado */
-  --Tila_Dorado_100: #D2CBB9;
-
-  /* Blancos */
-  --Tila_Blanco_100: #F9FAF5;
-  --Tila_Blanco_80: rgba(249, 250, 245, 0.95);  
-}
-
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: var(--fuente-principal);
+  font-family: 'BeathanyEllingston', 'Bebas Neue', sans-serif;
   background-color: var(--Tila_Blanco_100);
   color: var(--Tila_Negro_100);
 }

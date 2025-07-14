@@ -44,12 +44,11 @@
   margin: 0;
   font-size: 4rem;
   color: var(--Tila_Negro_100);
-font-family: 'BeathanyEllingston' normal;
-    font-weight: lighter;
-    max-width: 40vw;
-    padding: 2rem 0 4rem 0;
+  font-family: 'BeathanyEllingston', serif;
+  font-weight: lighter;
+  max-width: 40vw;
+  padding: 2rem 0 4rem 0;
 }
-
 .slide p {
   margin: 0;
   opacity: 0.8;
