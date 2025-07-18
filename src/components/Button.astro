@@ -30,7 +30,6 @@ const { href = "#", variant = "primary" } = Astro.props;
     background-color: var(--Tila_Verde_100);
 
   }
-
   
 
   /* variante dorada */
@@ -40,7 +39,10 @@ const { href = "#", variant = "primary" } = Astro.props;
     border: none;
     font-family: var(--font-Tila-NavBar, 'Bebas Neue', sans-serif);
     letter-spacing: 1.6px;
-
+  }
+  .button.dorado:hover {
+    color: var(--Tila_Blanco_100);
+    background-color: var(--Tila_Verde_100);
   }
 
    .button.negro {
@@ -56,6 +58,5 @@ const { href = "#", variant = "primary" } = Astro.props;
      .button.negro:hover {
     color: var(--Tila_Blanco_100);
     background-color: var(--Tila_Verde_100);
-
   }
 </style>
