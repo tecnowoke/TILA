@@ -24,6 +24,37 @@ const base = import.meta.env.BASE_URL;
       <ButtonTila href="https://tila-sembrar-salud.tiendup.com/login" variant="dorado">
         Iniciar sesión
       </ButtonTila>
+
+      <!-- Botón hamburguesa solo visible en móvil -->
+<button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+  ☰
+</button>
     </div>
   </div>
 </nav>
+<!-- Menú desplegable móvil -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu" aria-label="Cerrar menú">✕</button>
+  <ul>
+    <li><a href={base}>Inicio</a></li>
+    <li><a href={`${base}tila`}>Nosotros</a></li>
+    <li><a href={`${base}#formaciones`}>Formaciones</a></li>
+    <li><a href={`${base}#workshops`}>Cursos</a></li>
+  </ul>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeMenu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.style.display = 'none';
+    });
+  });
+</script>

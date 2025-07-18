@@ -187,3 +187,20 @@ input#slide4:checked ~ .navigation label[for="slide4"] {
   background: white;
 }
 
+/* ==================== TABLET ==================== */
+@media screen and (max-width: 1024px) {
+  .subtitulo {
+    padding: 2rem 10vw;
+  }
+
+  /* Puedes agregar más ajustes aquí si los necesitas */
+}
+
+/* ==================== MOBILE ==================== */
+@media screen and (max-width: 600px) {
+  .subtitulo {
+    padding: 1.5rem 5vw;
+  }
+
+  /* Aquí también puedes ajustar tamaños de fuentes o layout más tarde */
+}
