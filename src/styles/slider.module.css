@@ -3,7 +3,6 @@
   max-width: 100vw;
   margin: auto;
   overflow: hidden;
-  border-radius: 8px;
   color: white;
   font-family: sans-serif;
   padding-top: 3rem;
@@ -16,7 +15,6 @@
   inset: 0; /* top:0; right:0; bottom:0; left:0; */
   background: #222 url('../assets/img/Imagen.jpg') center/cover no-repeat;
   opacity: 0.6; /* 60% opacidad */
-  border-radius: 8px;
   z-index: 0;
 }
 
@@ -32,7 +30,7 @@
 }
 
 .slide {
-    min-height: 70vh;
+  min-height: 80vh;
   min-width: 100%;
   padding: 5rem 7rem;
   box-sizing: border-box;
@@ -80,43 +78,54 @@
 }
 .arrowSection {
   display: flex;
-  gap: 0.5rem; /* espacio pequeño entre las flechas */
+  gap: 3rem; /* espacio pequeño entre las flechas */
+    padding: 50px 120px;
+
 }
 .navArrow {
-  background: rgba(37, 99, 235, 0.8);
+  background: transparent;
   border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.3rem 0.8rem;
+  padding: 0;
   cursor: pointer;
-  border-radius: 50%;
-  user-select: none;
-  transition: background 0.3s;
-}
-
-.navArrow:hover {
-  background: #1e40af;
-}
-
-.navArrow:focus {
-  outline: 2px solid #93c5fd;
-}
-.pagination {
-  padding: 1rem 0.5rem;
   display: flex;
-  gap: 0.5rem; /* espacio entre botones de paginación */
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.arrowIcon {
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--Tila_Dorado_100);
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.navArrow:hover .arrowIcon {
+  color: var(--Tila_Negro_80);
+}
+
+.left {
+  transform: rotate(180deg);
+}
+
+
+.pagination {
+  padding: 50px 100px;
+  display: flex;
+  gap: 0.8rem; /* espacio entre botones de paginación */
 }
 
 .paginationButton {
-  background: var(--Tila_Negro_80);
+  background: #f9faf553;
   border: none;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .paginationButtonActive,
 .paginationButton:hover {
-  background: var(--Tila_Blanco_100);
+  background: var(--Tila_Negro_80);
 }
