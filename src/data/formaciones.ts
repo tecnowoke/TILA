@@ -12,6 +12,10 @@ export interface Curso {
   precioDolares: string;
   formasPago: string;
   linkPago: string;
+  linkVerMas: string;
+  linkPagoDolares?: string;
+
+
 }
 
 export const formaciones: Curso[] = [
@@ -28,7 +32,27 @@ export const formaciones: Curso[] = [
     precioPesos: "$650000",
     precioDolares: "U$S900",
     formasPago: "Transferencia bancaria, MercadoPago y PayPal",
-    linkPago: "https://tila-sembrar-salud.tiendup.com/login"
+    linkPago: "https://payments.tiendup.com/checkout/52399/ZZoLVxuqQB",
+    linkVerMas: "https://tila-sembrar-salud.tiendup.com/curso/abhyanga-intensivo"
+  },
+    {
+    slug: "tecnicas-avanzadas",
+    titulo: "Técnicas Avanzadas",
+    subtitulo: "Profundización en terapias ayurvédicas",
+    descripcion: "Para quienes buscan perfeccionar su conocimiento en Ayurveda.",
+    descripcionLarga: "Formación con Aval de la Embajada India en Argentina. Incluye prácticas avanzadas y certificación oficial.",
+    imagen: "https://static.wixstatic.com/media/061ef9_d8f742b493c9452391681d758e20402d~mv2.png/v1/fill/w_918,h_1230,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tecnicas_1.png",
+    imagen2: "https://static.wixstatic.com/media/061ef9_d8f742b493c9452391681d758e20402d~mv2.png",
+    imagen3: "https://static.wixstatic.com/media/061ef9_d8f742b493c9452391681d758e20402d~mv2.png",
+    modalidad: "Presencial",
+    precioPesos: "$950000",
+    precioDolares: "U$S800",
+    formasPago: "Transferencia bancaria, MercadoPago y PayPal",
+    linkPago: "https://payments.tiendup.com/checkout/52399/ZZoLVxuqQB",
+        linkVerMas: "https://tila-sembrar-salud.tiendup.com/curso/tecnicas-avanzadas",
+   linkPagoDolares: "https://payments.tiendup.com/checkout/52399/ZZoLVxuqQB",
+
+
   },
   {
     slug: "marma-chikitsa",
@@ -43,21 +67,9 @@ export const formaciones: Curso[] = [
     precioPesos: "$280000",
     precioDolares: "U$S280",
     formasPago: "Transferencia bancaria, MercadoPago y PayPal",
-    linkPago: "https://tila-sembrar-salud.tiendup.com/login"
-  },
-  {
-    slug: "tecnicas-avanzadas",
-    titulo: "Técnicas Avanzadas",
-    subtitulo: "Profundización en terapias ayurvédicas",
-    descripcion: "Para quienes buscan perfeccionar su conocimiento en Ayurveda.",
-    descripcionLarga: "Formación con Aval de la Embajada India en Argentina. Incluye prácticas avanzadas y certificación oficial.",
-    imagen: "https://static.wixstatic.com/media/061ef9_d8f742b493c9452391681d758e20402d~mv2.png/v1/fill/w_918,h_1230,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tecnicas_1.png",
-    imagen2: "https://static.wixstatic.com/media/061ef9_d8f742b493c9452391681d758e20402d~mv2.png",
-    imagen3: "https://static.wixstatic.com/media/061ef9_d8f742b493c9452391681d758e20402d~mv2.png",
-    modalidad: "Presencial",
-    precioPesos: "$950000",
-    precioDolares: "U$S800",
-    formasPago: "Transferencia bancaria, MercadoPago y PayPal",
-    linkPago: "https://tila-sembrar-salud.tiendup.com/login"
+    linkPago: "https://payments.tiendup.com/checkout/52399/ZZoLVxuqQB",
+    linkVerMas: "https://tila-sembrar-salud.tiendup.com/curso/marmachikitsa",
+    linkPagoDolares: "https://payments.tiendup.com/checkout/52399/ZZoLVxuqQB"
+
   }
 ];

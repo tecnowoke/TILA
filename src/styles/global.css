@@ -44,7 +44,6 @@ html, body {
   align-items: center;
   background-color: var(--Tila_Blanco_100);
   color: var(--Tila_Negro_100);
-  font-family: "Merriweather", serif;
   z-index: 3;
   box-sizing: border-box;
 }

@@ -25,7 +25,9 @@ const otrasFormaciones = formaciones.filter(f => f.slug !== formacionActualSlug)
   <header class={styles.header} style={`background-image: url('${formacion.imagen}')`}>
     <div class={styles.headerContent}>
       <h1 class={styles.headerTitle}>{formacion.titulo}</h1>
-      <a href={formacion.linkPago} class={styles.headerLink}>INGRESAR</a>
+      <ButtonTila href={formacion.linkVerMas} class={styles.headerLink}>
+        INGRESAR
+      </ButtonTila>
     </div>
   </header>
 
@@ -39,7 +41,10 @@ const otrasFormaciones = formaciones.filter(f => f.slug !== formacionActualSlug)
       <h2 class={styles.nombre}>{formacion.titulo}</h2>
       <p class={styles.modalidad}>{formacion.modalidad}</p>
       <p class={styles.descripcion}>{formacion.descripcion}</p>
-      <button class={styles.btnInfo}>+ INFORMACIÓN</button>
+      
+      <ButtonTila href={formacion.linkVerMas} class={styles.btnInfo} variant="negro">
+        + INFORMACIÓN
+      </ButtonTila>
 
       <div class={styles.pagoBlock}>
         <div class={styles.precios}>
@@ -47,7 +52,13 @@ const otrasFormaciones = formaciones.filter(f => f.slug !== formacionActualSlug)
           <p class={styles.precioDolares}>{formacion.precioDolares}</p>
           <p class={styles.formasPago}>Pagando con: {formacion.formasPago}</p>
         </div>
-        <button class={styles.btnComprar} onClick={() => window.location.href = formacion.linkPago}>Comprar</button>
+        <ButtonTila
+          variant="negro"
+          onClick={() => window.location.href = formacion.linkPago}
+          class={styles.btnComprar}
+        >
+          Comprar
+        </ButtonTila>
       </div>
     </div>
   </section>
@@ -58,23 +69,23 @@ const otrasFormaciones = formaciones.filter(f => f.slug !== formacionActualSlug)
   </section>
 
   <section class={styles.masFormaciones}>
-  <h3>Más Formaciones</h3>
-  <div class={styles.masFormacionesList}>
-    {otrasFormaciones.map(({ slug, titulo, descripcion, imagen }) => (
-      <article
-        class={styles.masFormacionItem}
-        style={`--bg-img: url('${imagen}')`}
-        key={slug}
-      >
-        <div class={styles.masFormacionContenido}>
-          <h4>{titulo}</h4>
-          <p>{descripcion}</p>
-          <ButtonTila href={`/formaciones/${slug}`} variant="primary" class={styles.masFormacionBtnInfo}>
-            + INFORMACIÓN
-          </ButtonTila>
-        </div>
-      </article>
-    ))}
-  </div>
-</section>
+    <h3>Más Formaciones</h3>
+    <div class={styles.masFormacionesList}>
+      {otrasFormaciones.map(({ slug, titulo, descripcion, imagen }) => (
+        <article
+          class={styles.masFormacionItem}
+          style={`--bg-img: url('${imagen}')`}
+          key={slug}
+        >
+          <div class={styles.masFormacionContenido}>
+            <h4>{titulo}</h4>
+            <p>{descripcion}</p>
+            <ButtonTila href={`/formaciones/${slug}`} variant="primary" class={styles.masFormacionBtnInfo}>
+              + INFORMACIÓN
+            </ButtonTila>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
 </Layout>
