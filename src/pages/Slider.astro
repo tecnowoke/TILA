@@ -1,6 +1,5 @@
 ---
 import styles from '../styles/slider.module.css';
-import FlechaIcon from "../assets/vectors/flecha.svg";
 import ButtonTila from "../components/Button.astro";
 
 const { slides = [] } = Astro.props;
@@ -9,7 +8,12 @@ const { slides = [] } = Astro.props;
 <div class={styles.slider} id="slider">
   <div class={styles.slides} id="slides" style="transform: translateX(0%)">
     {slides.map((slide, i) => (
-      <div class={styles.slide} key={i}>
+    <div
+      class={styles.slide}
+      key={i}
+      style={`background-image: url('${slide.img}'); background-size: cover; background-position: center;`}
+    >
+      <div class={styles.slideOverlay}>
         <p>{slide.subtitle}</p>
         <h2>{slide.title}</h2>
         <ButtonTila
@@ -20,7 +24,8 @@ const { slides = [] } = Astro.props;
           {slide.buttonText}
         </ButtonTila>
       </div>
-    ))}
+    </div>
+  ))}
   </div>
 
   <section class={styles.pieDeCarrousel}>

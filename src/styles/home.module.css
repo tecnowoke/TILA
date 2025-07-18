@@ -46,18 +46,20 @@
   justify-content: center;    /* centrar horizontalmente */
   align-items: center;        /* centrar verticalmente si quieres */
   margin: auto;
+  z-index: 2;
 }
 
 .Vector2 {
-  height: 20vw;
-  width: 20vw;
+  height: 335px;
+  width: 287px;
   object-fit: contain;
-  margin-top: -15rem;
+  margin-top: -290px;
+    z-index: 2;
 }
 
 .Vector3 {
-  height: 90px;
-  width: 90px;
+  height: 147px;
+  width: 168px;
   margin: auto;
 }
 
@@ -80,12 +82,12 @@
 }
 
 .animatedText {
-  font-family: 'BeathanyEllingston' normal;
+ font-family: 'BeathanyEllingston', serif;
   font-weight: lighter;
   font-size: 2.5rem;
   line-height: 0.9;
   margin: 0 auto;
-  padding: 0 10vw;
+  padding: 10vh 10vw;
   letter-spacing: -0.1rem; 
 }
 
@@ -201,6 +203,18 @@ input#slide4:checked ~ .navigation label[for="slide4"] {
   .subtitulo {
     padding: 1.5rem 5vw;
   }
+
+  .animatedSection {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 2rem 10vw 2rem 10vw;
+}
+
+  .Vector2 {
+  height: 100px;
+  width: 89px;
+  margin-top: 0px;
+}
 
   /* Aquí también puedes ajustar tamaños de fuentes o layout más tarde */
 }
